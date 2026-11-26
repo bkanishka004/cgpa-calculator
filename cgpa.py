@@ -1,6 +1,6 @@
 
 def calculate_cgpa(grade_points, credits):
-    return sum(grade_points) / len(grade_points)
+    return round(sum(grade_points) / len(grade_points), 2)
 
 
 if __name__ == "__main__":
@@ -8,4 +8,4 @@ if __name__ == "__main__":
     credits = [4, 3, 4, 2, 3]
 
     cgpa = calculate_cgpa(grades, credits)
-    print(f"Your CGPA is: {cgpa}")
+    print(f"Your simple average CGPA is: {cgpa}")
