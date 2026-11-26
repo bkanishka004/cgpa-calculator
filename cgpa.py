@@ -1,6 +1,11 @@
 
 def calculate_cgpa(grade_points, credits):
-    return sum(grade_points) / len(grade_points)
+    total_weighted_points = sum(
+        grade * credit for grade, credit in zip(grade_points, credits)
+    )
+    total_credits = sum(credits)
+
+    return total_weighted_points / total_credits
 
 
 if __name__ == "__main__":
@@ -8,4 +13,4 @@ if __name__ == "__main__":
     credits = [4, 3, 4, 2, 3]
 
     cgpa = calculate_cgpa(grades, credits)
-    print(f"Your CGPA is: {cgpa}")
+    print(f"Your weighted CGPA is: {cgpa:.2f}")
